@@ -5,3 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+Todo.destroy_all
+
+Todo.create!(title: "Get milk", body: "2% is NOT okay", done: true)
+Todo.create!(title: "None of that", body: "1%", done: false)
