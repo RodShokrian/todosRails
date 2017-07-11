@@ -1,13 +1,15 @@
+import { getTodos } from '../util/todo_api_util';
+
 export const RECEIVE_TODOS = "RECEIVE_TODOS";
 export const RECEIVE_TODO = "RECEIVE_TODO";
 export const REMOVE_TODO = "REMOVE_TODO";
 
-export const receiveTodos = todos => (
-  {
+export const receiveTodos = todos => {
+  return {
     type: RECEIVE_TODOS,
     todos
-  }
-);
+  };
+};
 
 export const receiveTodo = todo => (
   {
@@ -23,6 +25,11 @@ export const removeTodo = todo => (
   }
 );
 
+export const fetchTodos = () => (
+  (dispatch) => getTodos().then((todos) => dispatch(receiveTodos(todos)))
+);
+
+window.fetchTodos = fetchTodos;
 window.receiveTodos = receiveTodos;
 window.receiveTodo = receiveTodo;
 window.removeTodo = removeTodo;

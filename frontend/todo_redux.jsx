@@ -5,7 +5,7 @@ import { allTodos } from './reducers/selectors';
 import Root from './components/root';
 
 document.addEventListener('DOMContentLoaded', () => {
-  const store = configureStore;
+  const store = configureStore();
   window.store = store;
   window.allTodos = allTodos;
 
