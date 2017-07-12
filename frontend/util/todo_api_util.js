@@ -4,3 +4,11 @@ export const getTodos = () => {
     type: 'GET'
   });
 };
+
+export const addTodo = todo => {
+  return $.ajax({
+    url: 'api/todos',
+    type: 'POST',
+    data: {todo}
+  });
+};

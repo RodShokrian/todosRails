@@ -6,7 +6,7 @@ class TodoList extends React.Component {
   constructor(props) {
     super(props);
   }
-// todos, receiveTodo, removeTodo
+
   render () {
     return (
       <div>
@@ -18,7 +18,7 @@ class TodoList extends React.Component {
               removeTodo={this.props.removeTodo} />
           )}
         </ul>
-        <TodoForm receiveTodo={this.props.receiveTodo} />
+        <TodoForm errors={this.props.errors} createTodo={this.props.createTodo} />
       </div>
     );
   }
